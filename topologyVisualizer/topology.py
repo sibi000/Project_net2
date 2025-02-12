@@ -49,5 +49,3 @@ if __name__ == '__main__':
     CLI(net) # give the control to the user
     net.stop()
     os.system('sudo mn -c') # destroy the network
-
-    #prova
