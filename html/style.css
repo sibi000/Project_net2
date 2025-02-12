@@ -1,0 +1,309 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#h3 {
+  position: left;
+  margin: 5px 0;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 20px;
+}
+
+#displayContainer {
+    margin: 0px auto;
+    width: 1000px;
+    height: 650px;
+}
+
+#sliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#console {
+    height: 50px;
+    width: 100px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-6 {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0 10px;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    height: 40px;
+    width: 100px;
+}
+
+.button-6:hover:not([disabled]),
+.button-6:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover:not([disabled]) {
+    transform: translateY(-1px);
+}
+
+.button-6:active:not([disabled]) {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+#startBtn:hover:not([disabled]) {
+    background-color: #50C878;
+}
+
+#stopBtn:hover:not([disabled]) {
+    background-color: #EE4B2B;
+}
+
+#resetBtn:hover:not([disabled]) {
+    background-color: #89CFF0;
+}
+
+#refreshBtn:hover:not([disabled]) {
+    background-color: #FFD700;
+}
+
+#refreshBtn {
+    background: url('https://api.iconify.design/mdi/cloud-refresh-outline.svg?width=48') no-repeat center center / contain;
+}
+
+.sliderBox{
+    margin: 10px;
+}
+
+
+  
+  /* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    /* padding: 10px; */
+    width: 10vw;
+    height: 10vh; 
+}   
+
+.gridHeader3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px; 
+}
+
+#gridContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 20px;
+    width: 80vw;
+}
+
+.gridHeaderBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 42px;
+}
+
+#slice1Par {
+    color: #d33215;
+    font-weight: bold;
+}
+
+.gridBtn {
+    position: relative;
+    padding: 8px 16px;
+    background: #009579;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: medium;
+    background-color: white;
+    border: 0px;
+}
+
+.gridBtn:hover:not([disabled]) {
+    text-decoration: underline;
+}
+
+.gridBtn:active {
+    background: white;
+}
+
+.button__text {
+    font: bold 20px "Quicksand", san-serif;
+    color: black;
+    transition: all 0.2s;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: black;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.parInfoGrid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eb5151;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #61e755;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #32e721;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.node.fixed {
+    fill: #C0C0C0;
+}
+
+.node text {
+    font-size: 14px;
+}
+
+.link {
+    stroke: #090909;
+    stroke-opacity: .6;
+    stroke-width: 2px;
+}
+
+.port circle {
+    stroke: black;
+    fill: #C5F9F9;
+}
+
+.port text {
+    font-size: 10px;
+}
