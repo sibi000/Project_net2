@@ -11,6 +11,8 @@ sudo ovs-vsctl del-port s1 s1-eth2 -- \
 add-port s1 s1-eth2
 sudo ovs-vsctl del-port s1 s1-eth3 -- \
 add-port s1 s1-eth3
+sudo ovs-vsctl del-port s1 s1-eth4 -- \ 
+add-port s1 s1-eth4
 
 # SWITCH S2
 sudo ovs-vsctl del-port s2 s2-eth1 -- \
