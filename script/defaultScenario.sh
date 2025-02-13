@@ -9,6 +9,10 @@ echo 'Switch 1:'
 sudo ovs-vsctl -- \
 set port s1-eth1 qos=@newqos -- \
 set port s1-eth2 qos=@newqos -- \
+set port s1-eth3 qos=@newqos -- \
+set port s1-eth4 qos=@newqos -- \
+set port s1-eth5 qos=@newqos -- \
+set port s1-eth6 qos=@newqos -- \
 --id=@newqos create QoS type=linux-htb \
 other-config:max-rate=10000000 \
 queues:123=@1q -- \
@@ -18,6 +22,8 @@ queues:123=@1q -- \
 echo 'Switch 2:'
 sudo ovs-vsctl -- \
 set port s2-eth1 qos=@newqos -- \
+set port s2-eth2 qos=@newqos -- \
+set port s2-eth3 qos=@newqos -- \
 --id=@newqos create QoS type=linux-htb \
 other-config:max-rate=10000000 \
 
@@ -25,6 +31,7 @@ other-config:max-rate=10000000 \
 echo 'Switch 3:'
 sudo ovs-vsctl -- \
 set port s3-eth1 qos=@newqos -- \
+set port s3-eth2 qos=@newqos -- \
 --id=@newqos create QoS type=linux-htb \
 other-config:max-rate=10000000 \
 
