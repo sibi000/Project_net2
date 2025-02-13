@@ -19,21 +19,23 @@ class TopologyContainer(Topo):
         for i in range(3):
             sconfig = {'dpid': "%016x" % (i + 1)}
             self.addSwitch('s%d' % (i + 1), **sconfig)
-        # creates 6 hosts
-        for i in range(6):
+        # creates 7 hosts
+        for i in range(7):
             self.addHost('h%d' % (i + 1))
         
         # add links between switches
-        self.addLink('s1', 's2', **switch_link_config)
-        self.addLink('s1', 's3', **switch_link_config)
+        self.addLink('s1', 's2', **switch_link_config) #switch 1 port 1 (switch 2 port 1)
+        self.addLink('s1', 's3', **switch_link_config) #switch 1 port 2 (switch 3 port 1)
 
         # add links between hosts and switches
-        self.addLink('h1', 's1', **link_config)
-        self.addLink('h2', 's1', **link_config)
-        self.addLink('h3', 's1', **link_config)
-        self.addLink('h4', 's2', **link_config)
-        self.addLink('h5', 's2', **link_config)
-        self.addLink('h6', 's3', **link_config)
+        self.addLink('h1', 's1', **link_config) #switch 1 port 3
+        self.addLink('h2', 's1', **link_config) #switch 1 port 4
+        self.addLink('h3', 's1', **link_config) #switch 1 port 5
+        self.addLink('h7', 's1', **link_config) #switch 1 port 6
+        self.addLink('h4', 's2', **link_config) #switch 2 port 2
+        self.addLink('h5', 's2', **link_config) #switch 2 port 3
+        self.addLink('h6', 's3', **link_config) #switch 3 port 2
+        
 
 if __name__ == '__main__':
     topo = TopologyContainer() # build the topology  

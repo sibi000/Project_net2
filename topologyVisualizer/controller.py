@@ -16,14 +16,15 @@ class TrafficSlicing(app_manager.RyuApp):
         # The mac_to_port structure describes for each switch the mapping between MAC addresses and the corresponding switch port
         self.mac_to_port = {
             1: {
-                "00:00:00:00:00:01": 2, # host 1 port 2
-                "00:00:00:00:00:02": 3, # host 2 port 3
-                "00:00:00:00:00:03": 4, # host 3 port 4
+                "00:00:00:00:00:01": 3, # host 1 port 3
+                "00:00:00:00:00:02": 4, # host 2 port 4
+                "00:00:00:00:00:03": 5, # host 3 port 5
+                "00:00:00:00:00:07": 6, # host 7 port 6
             },
             2: {
                 
-                "00:00:00:00:00:04": 2, # host 4 port 3
-                "00:00:00:00:00:05": 3, # host 5 port 4
+                "00:00:00:00:00:04": 2, # host 4 port 2
+                "00:00:00:00:00:05": 3, # host 5 port 3
             },
             3: {
                 "00:00:00:00:00:06": 2, # host 6 port 2
