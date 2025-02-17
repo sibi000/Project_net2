@@ -9,12 +9,12 @@ const { kill } = require('process');
 const PORT = 8081; // Use port 8081 because port 8080 is used by mininet
 var PID = 0; // PID of child process
 
-const startPath = '/home/vagrant/comnetsemu/Project_2/script/start.sh'
-const resetScenario = '/home/vagrant/comnetsemu/Project_2/script/resetScenario.sh'
-const defaultScenario = '/home/vagrant/comnetsemu/Project_2/script/defaultScenario.sh'
-const slice2Scenario = '/home/vagrant/comnetsemu/Project_2/script/slice2Scenario.sh'
-const slice3Scenario = '/home/vagrant/comnetsemu/Project_2/script/slice3Scenario.sh'
-const sliceBothScenario = '/home/vagrant/comnetsemu/Project_2/script/slice2+3Scenario.sh'
+const startPath = '/home/vagrant/comnetsemu/Project_net2/script/start.sh'
+const resetScenario = '/home/vagrant/comnetsemu/Project_net2/script/resetScenario.sh'
+const defaultScenario = '/home/vagrant/comnetsemu/Project_net2/script/defaultScenario.sh'
+const slice2Scenario = '/home/vagrant/comnetsemu/Project_net2/script/slice2Scenario.sh'
+const slice3Scenario = '/home/vagrant/comnetsemu/Project_net2/script/slice3Scenario.sh'
+const sliceBothScenario = '/home/vagrant/comnetsemu/Project_net2/script/slice2+3Scenario.sh'
 
 app.use(express.static(__dirname + '/html'));
 app.use(bodyParser.urlencoded({ extended: false }));
