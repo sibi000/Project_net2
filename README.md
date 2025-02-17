@@ -172,10 +172,6 @@ If we check the connection among the hosts we get:
 
 <img src="images/defaultScenario/default-iperf-h1-h2.png" width="45%" height="45%"></img>
 
-<img src="images/defaultScenario/default-iperf-h1-h3.png" width="45%" height="45%">
-
-<img src="images/defaultScenario/default-iperf-h2-h3.png" width="45%" height="45%">
-
 ### Slice 2 Scenario
 
 <img src="images/slice2Scenario/topologySlice2.png" width=90% height=90%></img>
@@ -195,9 +191,9 @@ If we check the connection among the hosts we get:
 
 <img src="images/slice2Scenario/slice2-iperf-h1-h2.png" width="45%" height="45%"></img>
 
-<img src="images/slice2Scenario/slice2-iperf-h1-h3.png" width="45%" height="45%"></img>
+<img src="images/slice2Scenario/slice2-iperf-h3-h4.png" width="45%" height="45%"></img>
 
-<img src="images/slice2Scenario/slice2-iperf-h2-h3.png" width="45%" height="45%"></img>
+<img src="images/slice2Scenario/slice2-iperf-h3-h5.png" width="45%" height="45%"></img>
 
 <img src="images/slice2Scenario/slice2-iperf-h4-h5.png" width="45%" height="45%"></img>
 
@@ -219,10 +215,6 @@ This is what we are going to get with the pingall command
 If we check the connection among the hosts we get:
 
 <img src="images/slice3Scenario/slice3-iperf-h1-h2.png" width="45%" height="45%"></img>
-
-<img src="images/slice3Scenario/slice3-iperf-h1-h3.png" width="45%" height="45%"></img>
-
-<img src="images/slice3Scenario/slice3-iperf-h2-h3.png" width="45%" height="45%"></img>
 
 <img src="images/slice3Scenario/slice3-iperf-h6-h7.png" width="45%" height="45%"></img>
 
@@ -246,9 +238,9 @@ If we check the connection among the hosts we get:
 
 <img src="images/slice2+3Scenario/slice2+3-iperf-h1-h2.png" width="45%" height="45%"></img>
 
-<img src="images/slice2+3Scenario/slice2+3-iperf-h1-h3.png" width="45%" height="45%"></img>
+<img src="images/slice2+3Scenario/slice2+3-iperf-h3-h4.png" width="45%" height="45%"></img>
 
-<img src="images/slice2+3Scenario/slice2+3-iperf-h2-h3.png" width="45%" height="45%"></img>
+<img src="images/slice2+3Scenario/slice2+3-iperf-h3-h5.png" width="45%" height="45%"></img>
 
 <img src="images/slice2+3Scenario/slice2+3-iperf-h4-h5.png" width="45%" height="45%"></img>
 
