@@ -24,12 +24,12 @@ var ryuProcess = null;
 var topologyProcess = null;
 
 // function to set the bandwitdh limit for h2 and h3
-seth2h3limit = (operation, transferLimit) => {
-    setTimeout(function(){
-        topologyProcess.stdin.write(`h2 tc qdisc ${operation} dev h2-eth0 root tbf rate ${transferLimit}mbit burst 100kb limit ${transferLimit}000\n`, () => {});
-        topologyProcess.stdin.write(` h3 tc qdisc ${operation} dev h3-eth0 root tbf rate ${transferLimit}mbit burst 100kb limit ${transferLimit}000\n`);
-    }, 4000);
-}
+// seth2h3limit = (operation, transferLimit) => {
+//     setTimeout(function(){
+//         topologyProcess.stdin.write(`h2 tc qdisc ${operation} dev h2-eth0 root tbf rate ${transferLimit}mbit burst 100kb limit ${transferLimit}000\n`, () => {});
+//         topologyProcess.stdin.write(` h3 tc qdisc ${operation} dev h3-eth0 root tbf rate ${transferLimit}mbit burst 100kb limit ${transferLimit}000\n`);
+//     }, 4000);
+// }
 
 app.get('/api/startNetwork', (req, res) => {
 
@@ -89,7 +89,7 @@ app.get('/api/startNetwork', (req, res) => {
         console.log('Ryu script terminated with code: ' + code);
     });
 
-    seth2h3limit('add', 10); // Set limit for h2 and h3 to 10mbit
+    // seth2h3limit('add', 10); // Set limit for h2 and h3 to 10mbit
 
     if (ryuProcess.pid && topologyProcess.pid){
         setTimeout(function(){
@@ -136,7 +136,7 @@ app.use('/api/resetScenario', function(req, res) {
     console.log('Called API reset scenario');
 
     exec('sh' + resetScenario);
-    seth2h3limit('change', 10); // Set limit for h2 and h3 to 10mbit
+    // seth2h3limit('change', 10); // Set limit for h2 and h3 to 10mbit
 
     setTimeout(function(){
         const childDefScenario = exec('sh ' + defaultScenario, (err, stdout, stderr) => {
@@ -154,7 +154,7 @@ app.use('/api/resetScenario', function(req, res) {
 app.use('/api/activateSlice2', function(req, res) {
 
     console.log('Called API activate slice 2');
-    seth2h3limit('change', 6); // Set limit for h2 and h3 to 6mbit
+    // seth2h3limit('change', 6); // Set limit for h2 and h3 to 6mbit
 
     setTimeout(function(){
         exec('sh ' + slice2Scenario, (err, stdout, stderr) => {
@@ -172,7 +172,7 @@ app.use('/api/activateSlice2', function(req, res) {
 app.use('/api/activateSlice3', function(req, res) {
 
     console.log('Called API activate slice 3');
-    seth2h3limit('change', 6); // Set limit for h2 and h3 to 6mbit
+    // seth2h3limit('change', 6); // Set limit for h2 and h3 to 6mbit
 
     setTimeout(function(){
         exec('sh ' + slice3Scenario, (err, stdout, stderr) => {
@@ -190,7 +190,7 @@ app.use('/api/activateSlice3', function(req, res) {
 app.use('/api/activateBoth', function(req, res) {
 
     console.log('Called API activate slice 2+3');
-    seth2h3limit('change', 2); // Set limit for h2 and h3 to 2mbit
+    // seth2h3limit('change', 2); // Set limit for h2 and h3 to 2mbit
 
     setTimeout(function(){
         exec('sh ' + sliceBothScenario, (err, stdout, stderr) => {
