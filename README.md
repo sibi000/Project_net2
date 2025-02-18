@@ -1,12 +1,11 @@
-# Project_2
+# Project_net2
 
-Project for "Virtualized and Softwarized mobile networks" course held by Dr. Granelli @ UniTN
+Project for "Networking mod.2" course held by Dr. Granelli, Universiti of Trento.
 
-It is based on two of the project presented by the professor: 
-- `Interactive topology display for SDN networks`: providing an interactive display of the topology of an SDN network;
-- `On Demand SDN Slices in ComNetsEmu`: implement a network slicing approach to enable dynamic activation/de-activation of network slices via CLI/GUIcommands.
+It is one of the project presented by the professor.
+`On Demand SDN Slices in ComNetsEmu`: implement a network slicing approach to enable dynamic activation/de-activation of network slices to observe the traffic and its BW.
 
-Basically, it consists of a web application that displays the topology created using Ryu and allows to perform three different on-demand slicing through the UI.
+This project consists of a network slicing, based on different switchs and host to observe and study how it works. The idea is to handle different BW in different scenario between tre slices.
 
 ## Table of Contents
 
@@ -25,14 +24,12 @@ Basically, it consists of a web application that displays the topology created u
 
 ## Requirements
 
+- ComNetsEmu
 - Vagrant
 - VirtualBox
 - NodeJS
-- npm
 - python3
 - Mininet
-- Ryu
-- ComNetsEmu
 
 ## Project Structure
 
@@ -73,22 +70,24 @@ Here is represented the project tree expanding only the relevant files:
 ```
 
 
-The main folders and file are:
+**The most important folders and file are:**
 
-- `launch.sh` that clears mininet and starts the application.
-- `app.js` starts the web application and launch bash scripts to dynamically change the status of the slices.
-- `script/` containts the bash scripts that are launched by the app.js
-- `html/` contains the frontend of the visualizer.
-- `topologyVisualizer/` contains the ryu controller, the gui_start needed to visualize the topology and the topology of the network.
+- `launch.sh`: program that clears mininet and starts the application.
+- `app.js`: used to start the web application and launch bash scripts to dynamically change the status of the slices.
+- `script/`: containts the bash scripts that are launched by the app.js
+- `html/`: that contains the frontend of the visualizer.
+- `topologyVisualizer/`: contains the controller, the gui_start needed and the topology generator of the network.
 
 ## Installation procedure
 
-Assuming you already have npm, python3 and nodejs on your machine.
+Assuming already have npm (for javascript), python3 and nodejs on your machine.
 
-Since it is **Strongly advised** to set up comnetsemu in a Virtual Machine in order to ensure portability, you should follow these steps:
+Since it is **Strongly advised** to set up **Comnetsemu** and **Vagrant** in a Virtual Machine in order to ensure portability, you should follow these steps:
 
 1. Install [Vagrant](https://www.vagrantup.com) and [VirtualBox](https://www.virtualbox.org)
 2. Install [Comnetsemu](https://git.comnets.net/public-repo/comnetsemu#installation)
+
+Another option is to start all this setup on a Linux machine and not on a Virtualbox on Window.
 
 ## Access web application outside vagrant
 
@@ -156,109 +155,110 @@ In the terminal where you ran the bash script you are given the mininet's CLI. I
 
 ## Topology and Slicing
 
-We decided to keep this topology for the project:
+In this section we can see the topologies, their connections and also the results obtained by the simulations:
 
-### Default Scenario
+### 1. Default Scenario
 
-<img src="images/defaultScenario/topologyDefault.png" width=90% height=90%></img>
+<img src="images/defaultScenario/topologyDefault.png"
+width=100% height=100%></img>
 
-In the Default Scenario we have 3 hosts, 2 switches and 1 slice of 10 Mbps between h1, h2 and h3.
+In the Default Scenario we can notice 2 hosts, 1 switches and 1 slice of 10 Mbps between h1 and h2. All the BW is dedicated on this slice in this specific scenario:
 
-This is what we are going to get with the pingall command
+- Slice 1 between h1 and h2, using 10 Mbps link.
 
-<img src="images/defaultScenario/defaultPingAll.png" width="45%" height="45%"></img>
+Doing a `pingall` command are cleary showed all the connection between all the host in this scenario.
 
-If we check the connection among the hosts we get:
+<img src="images/defaultScenario/defaultPingAll.png" width="80%" height="80%"></img>
 
-<img src="images/defaultScenario/default-iperf-h1-h2.png" width="45%" height="45%"></img>
+If we test the connection among the hosts, using the `iperf` command, the followed results are obtained:
 
-### Slice 2 Scenario
+<img src="images/defaultScenario/default-iperf-h1-h2.png" width="80%" height="80%"></img>
 
-<img src="images/slice2Scenario/topologySlice2.png" width=90% height=90%></img>
+### 2. Slice 2 Scenario
 
-When the Slice 2 scenario is active, we add host 4 and host 5 to network.
+<img src="images/slice2Scenario/topologySlice2.png" 
+width=100% height=100%></img>
 
-This scenario has 5 hosts, 2 switches and 2 slices:
+In the Slice 2 Scenario we can notice 5 hosts, 2 switches and 2 slices. The BW is shared between the two active slice in this specific scenario:
 
-- Slice 1 between h1, h2 and h3 using a 6 Mbps link
-- Slice 2 between h4 and h5 using a 4 Mbps link
+- Slice 1 between h1 and h2, using 6 Mbps link.
+- Slice 2 between h3, h4 and h5, using 4 Mbps link.
 
-This is what we are going to get with the pingall command
+Doing a `pingall` command are cleary showed all the connection between all the host in this scenario.
 
-<img src="images/slice2Scenario/slice2PingAll.png" width="45%" height="45%"></img>
+<img src="images/slice2Scenario/slice2PingAll.png" width="80%" height="80%"></img>
 
-If we check the connection among the hosts we get:
+If we test the connection among the hosts, using the `iperf` command, the followed results are obtained:
 
-<img src="images/slice2Scenario/slice2-iperf-h1-h2.png" width="45%" height="45%"></img>
+<img src="images/slice2Scenario/slice2-iperf-h1-h2.png" width="80%" height="80%"></img>
 
-<img src="images/slice2Scenario/slice2-iperf-h3-h4.png" width="45%" height="45%"></img>
+<img src="images/slice2Scenario/slice2-iperf-h3-h4.png" width="80%" height="80%"></img>
 
-<img src="images/slice2Scenario/slice2-iperf-h3-h5.png" width="45%" height="45%"></img>
+<img src="images/slice2Scenario/slice2-iperf-h3-h5.png" width="80%" height="80%"></img>
 
-<img src="images/slice2Scenario/slice2-iperf-h4-h5.png" width="45%" height="45%"></img>
+<img src="images/slice2Scenario/slice2-iperf-h4-h5.png" width="80%" height="80%"></img>
 
-### Slice 3 Scenario
+### 3. Slice 3 Scenario
 
-<img src="images/slice3Scenario/topologySlice3.png" width=90% height=90%></img>
+<img src="images/slice3Scenario/topologySlice3.png"
+width=100% height=100%></img>
 
-When the Slice 3 scenario is active, we add host 6 and host 7 to network.
+In the Slice 3 Scenario we can notice 4 hosts, 2 switches and 2 slices. The BW is shared between the two active slice in this specific scenario:
 
-This scenario has 5 hosts, 3 switches and 2 slices:
+- Slice 1 between h1 and h2, using 6 Mbps link.
+- Slice 3 between h6 and h7, using 4 Mbps link.
 
-- Slice 1 between h1, h2 and h3 using a 6 Mbps link
-- Slice between h6 and h7 using a 4 Mbps link
+Doing a `pingall` command are cleary showed all the connection between all the host in this scenario.
 
-This is what we are going to get with the pingall command
+<img src="images/slice3Scenario/slice3PingAll.png"
+width="80%" height="80%"></img>
 
-<img src="images/slice3Scenario/slice3PingAll.png" width="45%" height="45%"></img>
+If we test the connection among the hosts, using the `iperf` command, the followed results are obtained:
 
-If we check the connection among the hosts we get:
+<img src="images/slice3Scenario/slice3-iperf-h1-h2.png" width="80%" height="80%"></img>
 
-<img src="images/slice3Scenario/slice3-iperf-h1-h2.png" width="45%" height="45%"></img>
+<img src="images/slice3Scenario/slice3-iperf-h6-h7.png" width="80%" height="80%"></img>
 
-<img src="images/slice3Scenario/slice3-iperf-h6-h7.png" width="45%" height="45%"></img>
+### 4. All the slice active
 
-### Both Scenario
+<img src="images/slice2+3Scenario/topologyBoth.png"
+width=100% height=100%></img>
 
-<img src="images/slice2+3Scenario/topologyBoth.png" width=90% height=90%></img>
+In the Slice last Scenario, whene all the slices are active, we can notice 7 hosts, 3 switches and 3 slices. The BW is shared between all the tre slices present in this scenario:
 
-When both, Slice 2 and Slice 3 scenario are active, we add host 4, host 5 host 6, host 7 to network.
+- Slice 1 between h1 and h2, using 6 Mbps link.
+- Slice 2 between h3, h4 and h5, using 3 Mbps link.
+- Slice 3 between h6 and h7, using 4 Mbps link.
 
-This scenario has 7 hosts, 3 switches and 3 slices:
+Doing a `pingall` command are cleary showed all the connection between all the host in this scenario.
 
-- Slice 1 between h1, h2 and h3 using a 2 Mbps link
-- Slice 2 between h4 and h5 using a 4 Mbps link
-- Slice between h6 and h7 using a 4 Mbps link
+<img src="images/slice2+3Scenario/slice2+3PingAll.png" width="80%" height="80%"></img>
 
-This is what we are going to get with the pingall command
+If we test the connection among the hosts, using the `iperf` command, the followed results are obtained:
 
-<img src="images/slice2+3Scenario/slice2+3PingAll.png" width="45%" height="45%"></img>
+<img src="images/slice2+3Scenario/slice2+3-iperf-h1-h2.png" width="80%" height="80%"></img>
 
-If we check the connection among the hosts we get:
+<img src="images/slice2+3Scenario/slice2+3-iperf-h3-h4.png" width="80%" height="80%"></img>
 
-<img src="images/slice2+3Scenario/slice2+3-iperf-h1-h2.png" width="45%" height="45%"></img>
+<img src="images/slice2+3Scenario/slice2+3-iperf-h3-h5.png" width="80%" height="80%"></img>
 
-<img src="images/slice2+3Scenario/slice2+3-iperf-h3-h4.png" width="45%" height="45%"></img>
+<img src="images/slice2+3Scenario/slice2+3-iperf-h4-h5.png" width="80%" height="80%"></img>
 
-<img src="images/slice2+3Scenario/slice2+3-iperf-h3-h5.png" width="45%" height="45%"></img>
-
-<img src="images/slice2+3Scenario/slice2+3-iperf-h4-h5.png" width="45%" height="45%"></img>
-
-<img src="images/slice2+3Scenario/slice2+3-iperf-h6-h7.png" width="45%" height="45%"></img>
+<img src="images/slice2+3Scenario/slice2+3-iperf-h6-h7.png" width="80%" height="80%"></img>
 
 ## Useful Mininet commands
 
-Once the application is up and running you can run some code in mininet to check the status of the network.
+In this GIT you can find everything you need to run these situations in the given network. Of course you can run other tests (or even modifications), and in order to test the various slices here are some of the most useful commands.
 
-The `mininet>` is used instead of `~$` to underline the fact that we are inside the mininet CLI while the application is running and not on the standard terminal.
+NB: The therm `mininet>` is used instead of `~$` to underline that we are inside the mininet CLI while the application is running.
 
 The most useful commands are:
 
-- `mininet> nodes` to check the available nodes in the network
-- `mininet> links ` to display network's links
-- `mininet> pingall`, which lets all hosts ping each other
-- `mininet> <src_host> ping <dst_host>` e.g. `h1 ping h3` which lets an host send some packets through the network to check its reachability
-- `mininet> iperf <src_host> <dst_host>` e.g. `iperf h1 h3` which lets an host check the bandwidth available
+- `mininet> pingall`, which lets all hosts ping each other, it's quite long execution.
+- `mininet> iperf <src_host> <dst_host>` e.g. `iperf h1 h3` which lets an host check the avaiable bandwidth between two hosts.
+- `mininet> nodes` to check the available nodes in the network.
+- `mininet> links ` to display network's links.
+- `mininet> <src_host> ping <dst_host>` e.g. `h1 ping h3` which lets an host send some packets through the network to check its reachability.
 
 ## Documentation
 
