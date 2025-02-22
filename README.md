@@ -12,8 +12,6 @@ This project consists of a network slicing, based on different switchs and host 
 - [Requirements](#requirements)
 - [Project Structure](#project-structure)
 - [Installation Procedure](#installation-procedure)
-- [Access web application outside vagrant](#access-web-application-outside-vagrant)
-- [How to run the project](#how-to-run-the-project)
 - [Topology and slicing](#topology-and-slicing)
   - [Default scenario](#default-scenario)
   - [Slice 2 scenario](#slice-2-scenario)
@@ -27,7 +25,6 @@ This project consists of a network slicing, based on different switchs and host 
 - ComNetsEmu
 - Vagrant
 - VirtualBox
-- NodeJS
 - python3
 - Mininet
 
@@ -36,11 +33,7 @@ This project consists of a network slicing, based on different switchs and host 
 Here is represented the project tree expanding only the relevant files:
 
 ```bash
-📦Project_2
- ┣ 📂html
- ┃ ┣ 📜index.html
- ┃ ┣ 📜script.js
- ┃ ┗ 📜style.css
+📦Project_net2
  ┣ 📂images
  ┣ 📂node_modules
  ┣ 📂script
@@ -63,9 +56,6 @@ Here is represented the project tree expanding only the relevant files:
  ┃ ┗ 📜topology.py
  ┣ 📜.gitignore
  ┣ 📜README.md
- ┣ 📜app.js
- ┣ 📜launch.sh
- ┗ 📜package.json
 
 ```
 
@@ -73,10 +63,8 @@ Here is represented the project tree expanding only the relevant files:
 **The most important folders and file are:**
 
 - `launch.sh`: program that clears mininet and starts the application.
-- `app.js`: used to start the web application and launch bash scripts to dynamically change the status of the slices.
-- `script/`: containts the bash scripts that are launched by the app.js
-- `html/`: that contains the frontend of the visualizer.
 - `topologyVisualizer/`: contains the controller, the gui_start needed and the topology generator of the network.
+- `script/`: folder that contains all the scenarios needed to setup the simulations.
 
 ## Installation procedure
 
@@ -89,70 +77,6 @@ Since it is **Strongly advised** to set up **Comnetsemu** and **Vagrant** in a V
 
 Another option is to start all this setup on a Linux machine and not on a Virtualbox on Window.
 
-## Access web application outside vagrant
-
-In order to be able to access to the visualizer using a browser, you need to create a private network between the Virtual Machine and your local machine. To achieve this you have to:
-
-1. Go to comnetsemu installation folder
-
-```bash
-~$ cd <comnetsemu_location>
-```
-
-2. Once you are in the directory you can perform an `ls` and you should see the `Vagrantfile`. From here, open it and copy this line in the file to create the private network
-
-```bash
-config.vm.network "private_network", ip: "192.168.56.2"
-```
-
-We will use the IP `192.168.56.2:8081` to access the web application.
-
-## How to Run the project
-
-Our `<comnetsemu_location>` is `~/comnetsemu`, so we're going to use this from now on.
-
-1. Go to comnetsemu location
-
-```bash
-~$ cd comnetsemu
-```
-
-2. Start your Virtual machine
-
-```bash
-~$ vagrant up comnetsemu
-```
-
-3. Connect to it trough ssh
-
-```bash
-~$ vagrant ssh comnetsemu
-```
-
-4. Go to the project folder
-
-```bash
-~$ cd comnetsemu/Project_2
-```
-
-5. Run the bash file to start the webapp
-
-```bash
-~$ bash ./launch.sh
-```
-
-6. Once the webapp is up and running open your favourite browser and paste
-
-```
-http://192.168.56.2:8081
-```
-
-Now you can interact with the WebApp!
-
-In the terminal where you ran the bash script you are given the mininet's CLI. In this way you can perform checks on the slices in real time!
-
-**Note** in step 2 and 3 it is not necessary to call `comnetsemu` after vagrant up and ssh, but it is advised in case of multiple VMs running in your machine at the same time.
-
 ## Topology and Slicing
 
 In this section we can see the topologies, their connections and also the results obtained by the simulations:
@@ -162,7 +86,7 @@ In this section we can see the topologies, their connections and also the result
 <img src="images/defaultScenario/topologyDefault.png"
 width=100% height=100%></img>
 
-In the Default Scenario we can notice 2 hosts, 1 switches and 1 slice of 10 Mbps between h1 and h2. All the BW is dedicated on this slice in this specific scenario:
+In the Default Scenario we can notice 2 hosts, 2 switches and 1 slice of 10 Mbps between h1 and h2. All the BW is dedicated on this slice in this specific scenario:
 
 - Slice 1 between h1 and h2, using 10 Mbps link.
 
@@ -179,7 +103,7 @@ If we test the connection among the hosts, using the `iperf` command, the follow
 <img src="images/slice2Scenario/topologySlice2.png" 
 width=100% height=100%></img>
 
-In the Slice 2 Scenario we can notice 5 hosts, 2 switches and 2 slices. The BW is shared between the two active slice in this specific scenario:
+In the Slice 2 Scenario we can notice 5 hosts, 3 switches and 2 slices. The BW is shared between the two active slice in this specific scenario:
 
 - Slice 1 between h1 and h2, using 6 Mbps link.
 - Slice 2 between h3, h4 and h5, using 4 Mbps link.
@@ -266,6 +190,5 @@ For more information on the tools used please read these:
 
 - [Mininet](http://mininet.org/walkthrough)
 - [RYU Documentation](https://ryu.readthedocs.io/en/latest/)
-- [RYU RestAPI](https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html)
 - [OpenSwitch Command reference](https://docs.pica8.com/display/PICOS2111cg/PicOS+Open+vSwitch+Command+Reference)
 
