@@ -29,12 +29,12 @@ class TopologyContainer(Topo):
 
         # add links between hosts and switches
         self.addLink('h1', 's1', **link_config) #switch 1 port 3
-        self.addLink('h2', 's1', **link_config) #switch 1 port 4
-        self.addLink('h3', 's1', **link_config) #switch 1 port 5
-        self.addLink('h7', 's1', **link_config) #switch 1 port 6
+        self.addLink('h7', 's1', **link_config) #switch 1 port 4
         self.addLink('h4', 's2', **link_config) #switch 2 port 2
         self.addLink('h5', 's2', **link_config) #switch 2 port 3
         self.addLink('h6', 's3', **link_config) #switch 3 port 2
+        self.addLink('h2', 's3', **link_config) #switch 1 port 3
+        self.addLink('h3', 's3', **link_config) #switch 1 port 4
         
 
 if __name__ == '__main__':
