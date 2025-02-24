@@ -45,14 +45,7 @@ Here is represented the project tree expanding only the relevant files:
  ┃ ┗ 📜start.sh
  ┣ 📂topologyVisualizer
  ┃ ┣ 📂__pycache__
- ┃ ┣ 📂frontend
- ┃ ┃ ┣ 📜host.svg
- ┃ ┃ ┣ 📜index.html
- ┃ ┃ ┣ 📜router.svg
- ┃ ┃ ┣ 📜ryu.topology.js
- ┃ ┃ ┗ 📜style.css
  ┃ ┣ 📜controller.py
- ┃ ┣ 📜gui_start.py
  ┃ ┗ 📜topology.py
  ┣ 📜.gitignore
  ┣ 📜README.md

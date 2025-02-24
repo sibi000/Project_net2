@@ -8,7 +8,7 @@ sudo mn -c &>/dev/null
 echo "Mininet cleaned"
 
 # run ryu controller
-ryu-manager --observe-links gui_start.py controller.py &
+ryu-manager --observe-links controller.py &
 sleep 1 
 
 #run Mininet
