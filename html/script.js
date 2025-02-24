@@ -133,32 +133,32 @@ setSliceInfo = (sliceName) => {
 
     switch (sliceName){
         case 'default':
-            slice1Info.innerHTML = 'H1 <-> H2 <-> H3 <br>' +
+            slice1Info.innerHTML = 'H1 <-> H2 <br>' +
                                    'Bandwidth: 10 Mbps';
             slice2Info.innerHTML = null;
             slice3Info.innerHTML = null;
             break;
         case 'slice2':
-            slice1Info.innerHTML = 'H1 <-> H2 <-> H3 <br>' +
+            slice1Info.innerHTML = 'H1 <-> H2 <br>' +
                                    'Bandwidth: 6 Mbps';
-            slice2Info.innerHTML = 'H4 <-> H5 <br>' +
+            slice2Info.innerHTML = 'H4 <-> H5 <-> H3 <br>' +
                                    'Bandwidth: 4 Mbps';
             slice3Info.innerHTML = null;
             break;
         case 'slice3':
-            slice1Info.innerHTML = 'H1 <-> H2 <-> H3 <br>' +
+            slice1Info.innerHTML = 'H1 <-> H2 <br>' +
             'Bandwidth: 6 Mbps';
             slice2Info.innerHTML = null;
             slice3Info.innerHTML = 'H6 <-> H7 <br>' +
                                    'Bandwidth: 4 Mbps';
             break;
         case 'both':
-            slice1Info.innerHTML = 'H1 <-> H2 <-> H3 <br>' +
-            'Bandwidth: 2 Mbps'
-            slice2Info.innerHTML = 'H4 <-> H5 <br>' +
-                                   'Bandwidth: 4 Mbps';
+            slice1Info.innerHTML = 'H1 <-> H2 <br>' +
+            'Bandwidth: 5 Mbps'
+            slice2Info.innerHTML = 'H4 <-> H5 <-> H3 <br>' +
+                                   'Bandwidth: 3 Mbps';
             slice3Info.innerHTML = 'H6 <-> H7 <br>' +
-                                   'Bandwidth: 4 Mbps';
+                                   'Bandwidth: 2 Mbps';
             break;
         case 'null':    
             slice1Info.innerHTML = null;
