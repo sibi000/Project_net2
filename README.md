@@ -13,9 +13,9 @@ This project consists of a network slicing, based on different switchs and host 
 - [Project Structure](#project-structure)
 - [Installation Procedure](#installation-procedure)
 - [Topology and slicing](#topology-and-slicing)
-  - [1. Default Scenario](#1.-Default-Scenario)
-  - [2. Slice 2 Scenario](#2.-Slice-2-Scenario)
-  - [3. Slice 3 Scenario](#3.-Slice-3-Scenario)
+  - [1. Default Scenario](#default-scenario)
+  - [2. Slice 2 Scenario](#slice-2-scenario)
+  - [3. Slice 3 Scenario](#slice-3-scenario)
   - [4. All the slice active](#4.-All-the-slice-active)
 - [Useful Mininet commands](#useful-mininet-commands)
 - [Documentation](#documentation)
@@ -74,7 +74,7 @@ Another option is to start all this setup on a Linux machine and not on a Virtua
 
 In this section we can see the topologies, their connections and also the results obtained by the simulations:
 
-### 1. Default Scenario
+### Default Scenario
 
 <img src="images/defaultScenario/topologyDefault.jpg"
 width=100% height=100%></img>
@@ -91,7 +91,7 @@ If we test the connection among the hosts, using the `iperf` command, the follow
 
 <img src="images/defaultScenario/default-iperf-h1-h2.png" width="80%" height="80%"></img>
 
-### 2. Slice 2 Scenario
+### Slice 2 Scenario
 
 <img src="images/slice2Scenario/topologySlice2.jpg" 
 width=100% height=100%></img>
@@ -115,7 +115,7 @@ If we test the connection among the hosts, using the `iperf` command, the follow
 
 <img src="images/slice2Scenario/slice2-iperf-h4-h5.png" width="80%" height="80%"></img>
 
-### 3. Slice 3 Scenario
+### Slice 3 Scenario
 
 <img src="images/slice3Scenario/topologySlice3.jpg"
 width=100% height=100%></img>
@@ -136,7 +136,7 @@ If we test the connection among the hosts, using the `iperf` command, the follow
 
 <img src="images/slice3Scenario/slice3-iperf-h6-h7.png" width="80%" height="80%"></img>
 
-### 4. All the slice active
+### All the slice active
 
 <img src="images/slice2+3Scenario/topologyBoth.jpg"
 width=100% height=100%></img>
