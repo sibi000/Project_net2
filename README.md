@@ -76,7 +76,7 @@ In this section we can see the topologies, their connections and also the result
 
 ### 1. Default Scenario
 
-<img src="images/defaultScenario/topologyDefault.png"
+<img src="images/defaultScenario/topologyDefault.jpg"
 width=100% height=100%></img>
 
 In the Default Scenario we can notice 2 hosts, 2 switches and 1 slice of 10 Mbps between h1 and h2. All the BW is dedicated on this slice in this specific scenario:
@@ -93,7 +93,7 @@ If we test the connection among the hosts, using the `iperf` command, the follow
 
 ### 2. Slice 2 Scenario
 
-<img src="images/slice2Scenario/topologySlice2.png" 
+<img src="images/slice2Scenario/topologySlice2.jpg" 
 width=100% height=100%></img>
 
 In the Slice 2 Scenario we can notice 5 hosts, 3 switches and 2 slices. The BW is shared between the two active slice in this specific scenario:
@@ -117,7 +117,7 @@ If we test the connection among the hosts, using the `iperf` command, the follow
 
 ### 3. Slice 3 Scenario
 
-<img src="images/slice3Scenario/topologySlice3.png"
+<img src="images/slice3Scenario/topologySlice3.jpg"
 width=100% height=100%></img>
 
 In the Slice 3 Scenario we can notice 4 hosts, 2 switches and 2 slices. The BW is shared between the two active slice in this specific scenario:
@@ -138,7 +138,7 @@ If we test the connection among the hosts, using the `iperf` command, the follow
 
 ### 4. All the slice active
 
-<img src="images/slice2+3Scenario/topologyBoth.png"
+<img src="images/slice2+3Scenario/topologyBoth.jpg"
 width=100% height=100%></img>
 
 In the Slice last Scenario, whene all the slices are active, we can notice 7 hosts, 3 switches and 3 slices. The BW is shared between all the tre slices present in this scenario:
