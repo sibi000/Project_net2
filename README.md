@@ -12,6 +12,7 @@ This project consists of a network slicing, based on different switchs and host 
 - [Requirements](#requirements)
 - [Project Structure](#project-structure)
 - [Installation Procedure](#installation-procedure)
+- [How to run the project](#how-to-run-the-project)
 - [Topology and slicing](#topology-and-slicing)
   - [1. Default Scenario](#default-scenario)
   - [2. Slice 2 Scenario](#slice-2-scenario)
@@ -68,7 +69,61 @@ Since it is **Strongly advised** to set up **Comnetsemu** and **Vagrant** in a V
 1. Install [Vagrant](https://www.vagrantup.com) and [VirtualBox](https://www.virtualbox.org)
 2. Install [Comnetsemu](https://git.comnets.net/public-repo/comnetsemu#installation)
 
-Another option is to start all this setup on a Linux machine and not on a Virtualbox on Window.
+Another option is to start all this setup on a Virtualbox on Window.
+
+## How to Run the project
+
+Our `<comnetsemu_location>` is `~/comnetsemu`, so we're going to use this from now on.
+
+Open two terminal and execute the following instructions for both:
+
+1. Go to comnetsemu location
+
+```bash
+~$ cd comnetsemu
+```
+
+2. Start your Virtual machine
+
+```bash
+~$ vagrant up comnetsemu
+```
+
+3. Connect to it trough ssh
+
+```bash
+~$ vagrant ssh comnetsemu
+```
+
+4. Go to the project folder
+
+```bash
+~$ cd comnetsemu/Project_net2
+```
+Now in the first terminal:
+
+1. Run the bash file to start mininet
+
+```bash
+~$ bash ./launch.sh
+```
+In the second terminal:
+
+1. Go to the script folder
+
+```bash
+~$ cd script
+```
+
+2. Reset the scenario
+
+```bash
+~$ ./resetScenario.sh
+```
+Now is possible choose a scenario and test it.
+
+NB:Remember to reset every time that you want change scenario.
+
 
 ## Topology and Slicing
 
