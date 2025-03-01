@@ -28,7 +28,7 @@ sudo ovs-vsctl del-port s3 s3-eth1 -- \
 add-port s3 s3-eth1
 sudo ovs-vsctl del-port s3 s3-eth2 -- \
 add-port s3 s3-eth2
-sudo ovs-vsctl del-port s3 s3-eth3 -- \ 
+sudo ovs-vsctl del-port s3 s3-eth3 -- \
 add-port s3 s3-eth3
 sudo ovs-vsctl del-port s3 s3-eth4 -- \
 add-port s3 s3-eth4
