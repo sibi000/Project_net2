@@ -83,7 +83,7 @@ Open two terminal and execute the following instructions for both:
 ~$ cd comnetsemu
 ```
 
-2. Start your Virtual machine
+2. Start your Virtual machine 
 
 ```bash
 ~$ vagrant up comnetsemu
