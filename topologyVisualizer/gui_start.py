@@ -3,9 +3,9 @@ import json
 from webob.static import DirectoryApp
 from ryu.app.wsgi import ControllerBase, WSGIApplication, route
 from ryu.base import app_manager
+#Ryu is a framework and works as an SDN controller
 
-
-
+#Ryu Application Main Class Definition
 PATH = os.path.dirname(__file__)
 
 
@@ -21,7 +21,7 @@ class GUIServerApp(app_manager.RyuApp):
         wsgi = kwargs['wsgi']
         wsgi.register(GUIServerController)
 
-
+#HTTP Controller Definition
 class GUIServerController(ControllerBase):
     
     def __init__(self, req, link, data, **config):
@@ -29,6 +29,7 @@ class GUIServerController(ControllerBase):
         path = "%s/frontend/" % PATH
         self.static_app = DirectoryApp(path)
 
+    #Management of requests
     @route('topology', '/{filename:[^/]*}')
     def static_handler(self, req, **kwargs):
         if kwargs['filename']:

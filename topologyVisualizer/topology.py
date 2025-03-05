@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+#Mininet simulates an SDN network with hosts, switches and links
 from mininet.topo import Topo
 from mininet.node import RemoteController, OVSKernelSwitch
 from mininet.net import Mininet

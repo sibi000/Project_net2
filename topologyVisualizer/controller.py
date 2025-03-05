@@ -6,6 +6,7 @@ from ryu.ofproto import ofproto_v1_3
 from ryu.lib.packet import packet
 from ryu.lib.packet import ethernet
 from ryu.lib.packet import ether_types
+#Ryu is a framework and works as an SDN controller
 
 class TrafficSlicing(app_manager.RyuApp):
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
@@ -36,7 +37,7 @@ class TrafficSlicing(app_manager.RyuApp):
     # Decoration function called when the Ryu controller receives an EventOFPSwitchFeatures event from a switch
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
 
-    # when the Ryu controller receives some switch_features
+    # When a switch connects, it sets a 'table-miss' rule to send unknown packets to the controller
     def switch_features_handler(self, ev): 
         # read some useful information (datapath, OF protocol) and creates the parser object
         datapath = ev.msg.datapath
@@ -50,7 +51,7 @@ class TrafficSlicing(app_manager.RyuApp):
         # add the new flow entry
         self.add_flow(datapath, 0, match, actions)
     
-    # create an OpenFlow OFPFlowMod message and sand it to the switch to install a new flow entry
+    # Adds a flow rule so that future packets are forwarded directly from the switch
     def add_flow(self, datapath, priority, match, actions):
         # read some useful information
         ofproto = datapath.ofproto
@@ -81,7 +82,7 @@ class TrafficSlicing(app_manager.RyuApp):
         # sand the OFPPacketOut packet
         datapath.send_msg(out)
 
-
+    # When a packet arrives at the controller, it checks the destination and forwards it to the correct port.
     # Decorator function called when a new packet is received by a switch
     @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
     def _packet_in_handler(self, ev):
