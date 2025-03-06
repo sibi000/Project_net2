@@ -198,9 +198,9 @@ width=100% height=100%></img>
 
 In the Slice last Scenario, whene all the slices are active, we can notice 7 hosts, 3 switches and 3 slices. The BW is shared between all the tre slices present in this scenario:
 
-- Slice 1 between h1 and h2, using 6 Mbps link.
+- Slice 1 between h1 and h2, using 5 Mbps link.
 - Slice 2 between h3, h4 and h5, using 3 Mbps link.
-- Slice 3 between h6 and h7, using 4 Mbps link.
+- Slice 3 between h6 and h7, using 2 Mbps link.
 
 Doing a `pingall` command are cleary showed all the connection between all the host in this scenario.
 
