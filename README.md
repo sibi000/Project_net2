@@ -80,19 +80,19 @@ Open two terminal and execute the following instructions for both:
 1. Go to comnetsemu location
 
 ```bash
-~$ cd comnetsemu
+~$ cd comnetsemu/
 ```
 
 2. Start your Virtual machine 
 
 ```bash
-~$ vagrant up comnetsemu
+~$ sudo vagrant up
 ```
 
 3. Connect to it trough ssh
 
 ```bash
-~$ vagrant ssh comnetsemu
+~$ sudo vagrant ssh comnetsemu
 ```
 
 4. Go to the project folder
