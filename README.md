@@ -43,13 +43,13 @@ Here is represented the project tree expanding only the relevant files:
  ┃ ┣ 📜slice2+3Scenario.sh
  ┃ ┣ 📜slice2Scenario.sh
  ┃ ┣ 📜slice3Scenario.sh
- ┃ ┗ 📜start.sh
  ┣ 📂topologyVisualizer
  ┃ ┣ 📂__pycache__
  ┃ ┣ 📜controller.py
  ┃ ┗ 📜topology.py
  ┣ 📜.gitignore
  ┣ 📜README.md
+ ┗ 📜launch.sh
 
 ```
 
