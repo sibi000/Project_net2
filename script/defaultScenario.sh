@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #reset previous configuration, this is done to avoid errors
-
+bash ./script/resetScenario.sh
 # S1
 echo ' ---------------------------------------------- '
 echo '*** Network Slicing: Creating 1 slice of 10 Mbps ...'
